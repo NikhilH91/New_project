@@ -1,0 +1,10 @@
+resource "aws_db_instance" "mydb" {
+  # ...
+
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x script.sql",
+      "script.sql args",
+    ]
+  }
+}
